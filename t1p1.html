@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <meta charset="utf-8">
+  <title>t1p1 - Ablakok</title>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif}
+    table {border-collapse:collapse; border:2px solid black}
+    tr, th, td {border:1px solid black; padding:2px }
+    tfoot {font-size: small}
+  </style>
+  <script>
+    function win_letrehozas() {
+      win_ref=window.open('', 'Új ablak', 'toolbar=no, status=no, width=200, height=200');
+    }
+    
+    function win_bezaras() {
+      win_ref.close();
+    }
+    
+    function szulo_win_bezaras(){
+      window.close();
+    }
+    win_ref=null;
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>&lt; <a href="index.html">előző</a>
+      </li>
+      <li>
+        <a href="t1.html">következő</a> &gt;
+      </li>
+    </ul>
+  </nav>
+  <hr>
+  <h1>Abla nyitása, zárása</h1>
+  <form name="frm1" id="frm1">
+    <p><input type="button" value="Ablak Létrehozás" onclick="win_letrehozas();"></p>
+    <p><input type="button" value="Ablak Bezárás" onclick="win_bezaras();"></p>
+    <p><input type="button" value="Böngésző Bezárás" onclick="szulo_win_bezaras();"></p>
+  </form>
+</body>
+</html>
