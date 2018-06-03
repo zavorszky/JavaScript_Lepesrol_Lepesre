@@ -3,44 +3,38 @@
 <head>
   <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
   <meta charset="utf-8">
-  <title>t1p1 - Ablakok</title>
-  <style>
-    body {font-family: Arial, Helvetica, sans-serif}
-    table {border-collapse:collapse; border:2px solid black}
-    tr, th, td {border:1px solid black; padding:2px }
-    tfoot {font-size: small}
-  </style>
+  <link rel="stylesheet" href="t.css">
+  <title>t1p1 - Ablakok megnyitása, bezárása</title>
   <script>
-    function win_letrehozas() {
-      win_ref=window.open('', 'Új ablak', 'toolbar=no, status=no, width=200, height=200');
+     /* Az ablak kezeléshez egy GLOBÁLIS változót használunk, amivel hivatkozunk az ablakra. */
+    win_ref=null;
+    
+    function win_nyitas() {
+      win_ref=window.open('', 't1p2 - Példa ablak', 'toolbar=no, status=no, width=200, height=200');
     }
     
-    function win_bezaras() {
+    function win_zaras() {
       win_ref.close();
     }
     
-    function szulo_win_bezaras(){
+    function szulo_win_zaras(){
       window.close();
     }
-    win_ref=null;
   </script>
 </head>
 <body>
   <nav>
     <ul>
-      <li>&lt; <a href="index.html">előző</a>
-      </li>
-      <li>
-        <a href="t1.html">következő</a> &gt;
+      <li>&lt; <a href="t1.html">vissza</a>
       </li>
     </ul>
   </nav>
   <hr>
-  <h1>Abla nyitása, zárása</h1>
+  <h1>Ablak nyitása, zárása</h1>
   <form name="frm1" id="frm1">
-    <p><input type="button" value="Ablak Létrehozás" onclick="win_letrehozas();"></p>
-    <p><input type="button" value="Ablak Bezárás" onclick="win_bezaras();"></p>
-    <p><input type="button" value="Böngésző Bezárás" onclick="szulo_win_bezaras();"></p>
+    <p><input type="button" value="Ablak Nyitás" onclick="win_nyitas();"></p>
+    <p><input type="button" value="Ablak Bezárás" onclick="win_zaras();"></p>
+    <p><input type="button" value="Böngésző Bezárás" onclick="szulo_win_zaras();"></p>
   </form>
 </body>
 </html>
