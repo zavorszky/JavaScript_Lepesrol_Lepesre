@@ -22,3 +22,8 @@ td {
 tfoot {
   font-size: small
 }
+
+.z9_olbal_navigator {
+  display:inline;
+  list-style:none
+}
