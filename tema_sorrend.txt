@@ -1,3 +1,6 @@
 index
 t1 # Ablak megnyitá, bezárás, mozgatás
+t2 # folyamatban<<<<<<< HEAD
 t2 # folyamatban
+=======
+>>>>>>> br_parbeszed_ablakok
