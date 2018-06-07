@@ -1,6 +1,7 @@
 index
 t1 # Ablak megnyitá, bezárás, mozgatás
-t2 # folyamatban<<<<<<< HEAD
+<<<<<<< HEAD
 t2 # folyamatban
 =======
+t2 # Párbeszéd ablakok
 >>>>>>> br_parbeszed_ablakok
