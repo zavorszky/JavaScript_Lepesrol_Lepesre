@@ -1,4 +1,5 @@
 index
 t1 # Ablak megnyitá, bezárás, mozgatás
 t2 # Párbeszéd ablakok
+t2 # Elemi form műveletek
 

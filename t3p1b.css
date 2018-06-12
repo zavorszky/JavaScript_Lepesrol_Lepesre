@@ -1,0 +1,11 @@
+#form_name_szovegmezo {
+  background-color: grey
+}
+
+#text_name_nev {
+  font-weight: normal
+}
+
+#text_name_nev:focus {
+  font-weight: bold
+}
