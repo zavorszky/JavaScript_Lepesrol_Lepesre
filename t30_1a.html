@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="t.css">
+  <style>
+    #form_name_szovegmezo {
+      background-color: grey;
+    }
+    #text_name_nev {
+      font-weight: normal;
+    }
+    #text_name_nev:focus {
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function onchange_EK() {
+      var v_elem = document.getElementById("text_name_nev");
+      var v_ertek = v_elem.value;
+      if (v_ertek !== "") {
+        document.getElementById("p_valasz").innerHTML = "Tehát <q>" + v_ertek + "<\/q> a neved :-)";
+      } else {
+        document.getElementById("p_valasz").innerHTML = "";
+      }
+    }
+  </script>
+  <title>t30_1a - Form elemek</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="z9_olbal_navigator">&lt; <a href="t30.html">előző</a>
+      </li>
+      <li class="z9_olbal_navigator">[ <a href="t0.html">index</a> ]
+      </li>
+    </ul>
+  </nav>
+  <hr>
+  <section>
+    <h2>Leírás</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin arcu neque, auctor nec vehicula a, sodales id
+    enim. In feugiat augue vel urna pulvinar, sed dapibus neque semper. Etiam varius ligula et libero molestie, id
+    bibendum tortor molestie. Duis sit amet pulvinar quam. Aenean tempus erat sit amet massa eleifend molestie. Mauris
+    pulvinar suscipit eros ac ullamcorper. Nulla dui ligula, venenatis vel malesuada a, blandit vitae nulla. Donec sem
+    sem, blandit vel tincidunt iaculis, luctus nec sapien.</p>
+    <p>Ebben a változatban a HTML kód tartalmazza a három funkciót: adat tárolás, megjelenítés, működés.<br>
+    (+) Egy helyen van minden. (+) A működés egyszerűbb. (-) A HTML kód túlterhelt.</p>
+  </section>
+  <section>
+    <h2>Példa</h2>
+    <form name="form_name_szovegmezo" id="form_name_szovegmezo">
+      <p>Hello !</p>
+      <p>Én <q>t30_1a</q> vagyok. Neked mi a beceneved ? <input type="text" name="text_name_nev" id="text_name_nev"
+      value="" onchange="onchange_EK();"></p>
+    </form>
+    <p id="p_valasz"></p>
+  </section>
+</body>
+</html>

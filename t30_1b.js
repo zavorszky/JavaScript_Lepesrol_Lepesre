@@ -11,11 +11,11 @@ function onchange_EK() {
   }
 } // onchange_EK()
 
-function t3p1b_ini() {
+function t30_1b_ini() {
   var v_elem = document.getElementById("text_name_nev");
   v_elem.onchange = function() {
     onchange_EK();
   };
-} // t3p1b_ini
+} // t30_1b_ini
 
-window.onload = t3p1b_ini;
+window.onload = t30_1b_ini;

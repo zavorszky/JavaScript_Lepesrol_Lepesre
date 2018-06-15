@@ -1,0 +1,11 @@
+#form_name_tsszovegmezo {
+  background-color: grey;
+}
+
+#textarea_name_szoveg {
+  font-weight: normal;
+}
+
+#textarea_name_szoveg:focus {
+  font-weight: bold;
+}
