@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="t.css">
+  <title>t1p2 - Ablakok mozgatása</title>
+  <script>
+    // Az ablak kezeléshez egy GLOBÁLIS változót használunk, amivel hivatkozunk az ablakra.
+    v_win=null;
+    v_win_meret_x=200; // >= 100 pixel
+    v_win_meret_y=200; // >= 100pixel
+    v_win_deltaX=10;    // Lépés pixelben
+    v_win_deltaY=5;
+    
+    function win_poz_ir() {
+      var v_elem=window.document.getElementById("p_id_pozicio");
+      if ((v_win === null) && (typeof v_win === "object"))
+        v_elem.innerHTML="";
+      else
+        v_elem.innerHTML=v_win.screenX+", "+v_win.screenY;
+      //if
+    } //win_poz_ir
+    
+    function win_nyitas() {
+      if ((v_win === null) && (typeof v_win === "object")) {
+        // A v_win még nem tartalmaz ablak referenciát.
+        v_win=window.open("", "t1p2 - Péda ablak", "toolbar=no, status=no, width="+v_win_meret_x+", height="+v_win_meret_y);
+        v_win.document.write("<h1>Szia Világ!<\/h1><p>Mozgass meg!<\/p>");
+        win_poz_ir();
+      } else {
+        window.alert("Figyelem!\nMár nyitva van az ablak.");
+      } //if
+    } //win_nyitas
+    
+    function win_zaras() {
+      if ((v_win === null) && (typeof v_win === "object")) {
+        window.alert("Figyelem!\nNincs bezárandó ablak.");
+      } else {
+        v_win.close();
+        v_win=null;
+        win_poz_ir();
+      } //if
+    } //win_zaras
+    
+    /**
+     * A megnyitott "v_win" ablak mozgatása vízszintesen és a koordinátájának kiírása.
+     * @param p_irany A mozgás iránya: "jobbra"=jobbra, "balra"=balra, egyébkénz nem mozgat.
+     * @returns Nincs
+     */
+    function win_mozg_jobbrabalra(p_irany) {
+      if ((v_win === null) && (typeof v_win === "object")) {
+        return;
+      }
+      else {
+        var x=v_win.screenX;
+        var y=v_win.screenY;
+        if (p_irany==="jobbra")
+          x=x+v_win_deltaX;
+        else if (p_irany==="balra")
+          x=x-v_win_deltaX;
+        v_win.moveTo(x, y);
+        win_poz_ir();
+      } //if
+    } //win_mozg_jobbrabalra
+    
+    /**
+     * A megnyitott "v_win" ablak mozgatása függőlegesen és a koordinátájának kiírása.
+     * @param p_irany A mozgás iránya: "le"=lefelé, "fel"=felfelé, egyébkénz nem mozgat.
+     * @returns Nincs
+     */
+    function win_mozg_lefel(p_irany) {
+      if ((v_win === null) && (typeof v_win === "object")) {
+        return;
+      }
+      else {
+        var x=v_win.screenX;
+        var y=v_win.screenY;
+        if (p_irany==="le")
+          y=y+v_win_deltaY;
+        else if (p_irany==="fel")
+          y=y-v_win_deltaY;
+        v_win.moveTo(x, y);
+        win_poz_ir();
+      } //if
+    } //win_mozg_lefel
+    
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="z9_olbal_navigator">&lt; <a href="t10.html">vissza</a>
+      </li>
+      <li class="z9_olbal_navigator">[ <a href="t0.html">index</a> ]
+      </li>
+    </ul>
+  </nav>
+  <hr>
+  <h1>Ablak mozgatás</h1>
+  <form name="frm1" id="frm1">
+    <p id="p_id_pozicio"></p>
+    <p>Ablak nyitás, zárás<br>
+    <input type="button" value="Ablak Nyitás" onclick="win_nyitas();"> <input type="button" value="Ablak Zárás"
+    onclick="win_zaras();"></p>
+    <p>Mozgatás<br>
+    <input type="button" value="fel" onclick="win_mozg_lefel('fel');"><br>
+    <input type="button" value="le" onclick="win_mozg_lefel('le');"></p>
+    <p><input type="button" value="balra" onclick="win_mozg_jobbrabalra('balra');"> <input type="button" value="jobbra"
+    onclick="win_mozg_jobbrabalra('jobbra');"></p>
+  </form>
+</body>
+</html>

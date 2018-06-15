@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="t.css">
+  <script>
+    function alert_run(){
+      window.alert("Hello!\nSemmi extra, egyszerűen egy szöveget jelenít megaz alert(). Az OK-ig várakozik a böngésző a JavaScript futtatásával.");
+    }
+      
+    function confirm_run() {
+      var v_valasz_igen =window.confirm("Hello!\nLehet szines a fejezet címe ?");
+      if (v_valasz_igen) {
+        window.document.getElementById("confirm_h3_id").style.backgroundColor="red";
+        window.document.getElementById("confirm_valasz").innerHTML="Szinezés jóváhagyva.";
+      } else {
+        window.document.getElementById("confirm_h3_id").style.backgroundColor="white";
+        window.document.getElementById("confirm_valasz").innerHTML="Szinezés elutasítva.";
+      }
+    }
+    
+    function prompt_run() {
+      var v_nap_nevek = ["vasárnap","hétfő","kedd","szerda","csütörtök","péntek","szomabt"];
+      var v_nap_neve=v_nap_nevek[(new Date()).getDay()];
+      var v_valasz_szoveg=window.prompt("Hello!\nMilyen nap van ma?\nSúgok: "+v_nap_neve, v_nap_neve);
+      if (v_valasz_szoveg===null)
+        window.document.getElementById("prompt_valasz").innerHTML="Nem akar válaszoni, megértem...";
+      else if (v_valasz_szoveg==="")
+        window.document.getElementById("prompt_valasz").innerHTML="Nem írt választ, de OK-zott. Hogy van ez ? :-|";
+      else
+        window.document.getElementById("prompt_valasz").innerHTML=v_valasz_szoveg;
+    }
+  </script>
+  <title>t2p1 - párbeszéd ablakok</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="z9_olbal_navigator">&lt; <a href="t20.html">előző</a>
+      </li>
+      <li class="z9_olbal_navigator"> [ <a href="t0.html">index</a> ]
+      </li>
+    </ul>
+  </nav>
+  <hr>
+  <section>
+    <h2>Leírás</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin arcu neque, auctor nec vehicula a, sodales id
+    enim. In feugiat augue vel urna pulvinar, sed dapibus neque semper. Etiam varius ligula et libero molestie, id
+    bibendum tortor molestie. Duis sit amet pulvinar quam. Aenean tempus erat sit amet massa eleifend molestie. Mauris
+    pulvinar suscipit eros ac ullamcorper. Nulla dui ligula, venenatis vel malesuada a, blandit vitae nulla. Donec sem
+    sem, blandit vel tincidunt iaculis, luctus nec sapien.</p>
+  </section>
+  <section>
+    <h2>Példák</h2>
+    <h3>Alert</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p><button onclick="alert_run();">Alert</button>
+    <h3 id="confirm_h3_id">Confirm</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua.</p><button onclick="confirm_run();">Confirm</button>
+    <p>Válasz: <span id="confirm_valasz"></span></p>
+    <h3>Prompt</h3>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+    laborum.</p><button onclick="prompt_run();">Prompt</button>
+    <p>Válasz: <span id="prompt_valasz"></span></p>
+  </section>
+</body>
+</html>

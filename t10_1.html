@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.5.31">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="t.css">
+  <title>t1p1 - Ablakok megnyitása, bezárása</title>
+  <script>
+     /* Az ablak kezeléshez egy GLOBÁLIS változót használunk, amivel hivatkozunk az ablakra. */
+    win_ref=null;
+    
+    function win_nyitas() {
+      win_ref=window.open('', 't1p2 - Példa ablak', 'toolbar=no, status=no, width=200, height=200');
+    }
+    
+    function win_zaras() {
+      win_ref.close();
+    }
+    
+    function szulo_win_zaras(){
+      window.close();
+    }
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="z9_olbal_navigator">&lt; <a href="t10.html">vissza</a>
+      </li>
+      <li class="z9_olbal_navigator">[ <a href="t0.html">index</a> ]
+      </li>
+    </ul>
+  </nav>
+  <hr>
+  <h1>Ablak nyitása, zárása</h1>
+  <form name="frm1" id="frm1">
+    <p><input type="button" value="Ablak Nyitás" onclick="win_nyitas();"></p>
+    <p><input type="button" value="Ablak Bezárás" onclick="win_zaras();"></p>
+    <p><input type="button" value="Böngésző Bezárás" onclick="szulo_win_zaras();"></p>
+  </form>
+</body>
+</html>

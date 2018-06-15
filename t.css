@@ -1,0 +1,29 @@
+/**
+ *
+ */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid black
+}
+
+tr,
+th,
+td {
+  border: 1px solid black;
+  padding: 2px
+}
+
+tfoot {
+  font-size: small
+}
+
+.z9_olbal_navigator {
+  display:inline;
+  list-style:none
+}
