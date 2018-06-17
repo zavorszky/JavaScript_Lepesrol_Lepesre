@@ -1,5 +1,6 @@
 index
 t10 # Ablak megnyitá, bezárás, mozgatás
 t20 # Párbeszéd ablakok
-t30 # Elemi form műveletek
+t30 # Form elemek, szövegmezők
+t40 # Form elemek, nyomógombok
 
